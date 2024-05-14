@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>게시물 수정</h1>
+
+    <!-- <form action="/board/delete" method="post"> -->
+    <form>
+        <table border="1">
+            <tr>
+                <td>제목</td>
+                <td>
+                    <input type="text" th:value="${board.title}">
+                </td>
+            </tr>
+            <tr>
+                <td>작성자</td>
+                <td>
+                    <input type="text" th:value="${board.writer}">
+                </td>
+            </tr>
+            <tr>
+                <td>내용</td>
+                <td>
+                    <input type="text" th:value="${board.content}">
+                </td>
+            </tr>
+        </table>
+        <!-- <button type="submit">삭제</button> -->
+        <button><a href="/board/list">목록</a></button>
+    </form>
+   
+</body>
+</html>

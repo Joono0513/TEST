@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>게시물 조회</h1>
+
+    <!-- <form action="/board/update" method="post"> -->
+    <form>
+        <table border="1">
+            <tr>
+                <td>제목</td>
+                <td th:text="${board.title}"></td>
+            </tr>
+            <tr>
+                <td>작성자</td>
+                <td th:text="${board.writer}"></td>
+            </tr>
+            <tr>
+                <td>내용</td>
+                <td th:text="${board.content}"></td>
+            </tr>
+        </table>
+        <button><a th:href="|/board/update?no=${board.no}|">수정</a></button>
+        <button><a href="/board/list">목록</a></button>
+    </form>
+    
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>게시판 목록</h1>
+    <a href="/board/insert">글쓰기</a>
+
+    <form>
+        <table border="1">
+            <tr>
+                <th width="50">번호</th>
+                <th width="300">제목</th>
+                <th width="100">작성자</th>
+                <th width="200">작성일자</th>
+                <th width="200">수정일자</th>
+                <th width="100">조회수</th>
+            </tr>
+            <tr th:each="board : ${board}">
+                <td align="center" th:text="${board.no}"></td>
+                <td align="center" id="title" title="title"><a th:text="${board.title}" th:href="|/board/read?no=${board.no}|"></a></td>
+                <td align="center" id="writer" title="writer" th:text="${board.writer}"></td>
+                <td align="center" th:text="${board.regDate}"></td>
+                <td align="center" th:text="${board.updDate}"></td>
+                <td align="center" th:text="${board.views}"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
